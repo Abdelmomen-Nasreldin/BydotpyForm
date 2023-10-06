@@ -1,0 +1,12 @@
+.design {
+    background-image: linear-gradient(
+            24deg,
+            rgba(48, 35, 75, 1) 0%,
+            rgba(48, 35, 75, 1) 15%,
+            rgba(48, 35, 75, 0.35) 100%
+        ),
+        url("../../assets/images/bgDesgin.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

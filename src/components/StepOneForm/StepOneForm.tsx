@@ -8,8 +8,8 @@ import { BsGlobe } from "react-icons/bs";
 const loginFormSchema = z.object({
     name: z.string({required_error: "required"}).trim(),
     email: z.string({required_error: "required"}).trim().email(),
-    phone: z.string({required_error: "required"}),
-    password: z.string({required_error: "required"}).trim().min(6)
+    phone: z.string({required_error: "required"}).trim(),
+    password: z.string({required_error: "required"}).trim().min(5)
 })
 
 const StepOneForm = ({next}: {next: ()=>void} ) => {
@@ -29,7 +29,7 @@ const StepOneForm = ({next}: {next: ()=>void} ) => {
     }
     return (
         <section className="relative ">
-            <div className="container mx-auto px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
+            <div className="  py-12 sm:px-6 sm:py-16 ">
                 
                 {
                     apiErrorMsg &&
