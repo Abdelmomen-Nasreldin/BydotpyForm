@@ -46,10 +46,8 @@ export default function HorizontalLinearStepper() {
             completed?: boolean;
           } =
             {};
-          // labelProps.completed = (
-          //   // <Typography variant="caption" className='text-center text-slate-700 text-xs font-normal leading-tight'>{steps[index].desc}</Typography>
-          // );
-          if (activeStep) {
+
+          if (activeStep  == index) {
             labelProps.completed = true;
           } else {
             labelProps.completed = false;
@@ -80,11 +78,10 @@ export default function HorizontalLinearStepper() {
         </React.Fragment>
       ) : (
         <React.Fragment>
-          <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
-         {activeStep == 0 &&  <StepOneForm />}
-         {activeStep == 1 &&  <StepTwoForm />}
-         {activeStep == 2 &&  <StepThreeForm />}
-          <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+         {activeStep == 0 &&  <StepOneForm  next={handleNext}/>}
+         {activeStep == 1 &&  <StepTwoForm  next={handleNext} back={handleBack}/>}
+         {activeStep == 2 &&  <StepThreeForm next={handleNext} back={handleBack}/>}
+          {/* <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
             <Button
               color="inherit"
               disabled={activeStep === 0}
@@ -97,7 +94,7 @@ export default function HorizontalLinearStepper() {
             <Button onClick={handleNext}>
               {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
             </Button>
-          </Box>
+          </Box> */}
         </React.Fragment>
       )}
     </Box>
