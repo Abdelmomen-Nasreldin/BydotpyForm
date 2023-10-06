@@ -1,4 +1,3 @@
-import React from 'react'
 
 const StepTwoForm =({next, back}: {next: ()=>void, back: ()=>void} ) => {
   return (
